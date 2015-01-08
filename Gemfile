@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'sqlite3', '1.3.10'
 gem 'rails', '4.1.8'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -16,6 +15,11 @@ gem 'rails_12factor'
 group :production do
 
 end
+
+group :development, :test do
+  gem 'sqlite3', '1.3.10'  
+end
+
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
