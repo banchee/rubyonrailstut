@@ -33,6 +33,7 @@ body {
 
 .col-md-3:nth-child(4n+1) {
   clear: left;
+  /*img {width: 90px; height: 90px;}*/
 }
 
 .col-md-6 {
@@ -47,7 +48,7 @@ body {
     font-size: 17px;
     margin: 2px;
   }
-  
+
   p 
   {
     font-size: 15px;
