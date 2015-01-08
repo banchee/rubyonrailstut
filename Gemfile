@@ -10,15 +10,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem "paperclip", "~> 4.2"
+gem 'pg'
+gem 'rails_12factor'
 
 group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
 
-group :development, :test do 
-  
-end 
+end
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
