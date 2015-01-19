@@ -10,6 +10,7 @@
     <h3><%= @listing.name %></h3>
     <h4><%= @listing.description %></h4>
     <p><%= number_to_currency(@listing.price) %></p>
+    <p><%if @listing.user %><%= @listing.user.name %><% end %></p>
   </div>
 </div>
 
