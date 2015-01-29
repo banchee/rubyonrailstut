@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :set_listing,        only: [:show, :edit,   :update, :destroy]
+  before_action :authenticate_user!, only: [:new,  :create, :edit,   :destroy]
+  before_action :check_user,         only: [:edit, :update, :destroy]
 
   # GET /listings
   # GET /listings.json
@@ -25,7 +27,7 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing         = Listing.new(listing_params)
-    @listing.user_id = current_user.id
+    @listing.user_id = (user_signed_in? ? current_user.id : nil)  
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
@@ -60,6 +62,12 @@ class ListingsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def check_user
+    if @listing.user != current_user 
+      redirect_to root_url, alert: "Sorry, this listing belongs to someone else"
+    end 
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.
