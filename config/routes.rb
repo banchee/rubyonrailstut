@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+
   devise_for :users
-  resources :listings
+  
+  resources :listings do
+    resources :orders, only[:new, :create]
+  end 
 
   get 'pages/about'
   get 'pages/contact'
   get 'seller' => "listings#seller"
+  get 'sales' => "orders#sales"
+  get 'purchases' => "orders#purchases"
 
   root 'listings#index'
 
@@ -62,4 +68,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end
