@@ -11,7 +11,6 @@
     <p><%if @listing.user %><%= @listing.user.name %><% end %></p>
     <div class="form-group">
       <%= link_to "Buy It Now", new_listing_order_path(@listing), class: "btn btn-primary" %>
-      <%= link_to 'Destroy', @listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %> | 
     </div>
   </div>
 </div>
