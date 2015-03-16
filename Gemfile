@@ -14,6 +14,7 @@ gem "figaro"
 gem 'pg'
 gem 'rails_12factor'
 gem 'devise', ">=2.2"
+gem 'stripe'
 
 group :production do
 
