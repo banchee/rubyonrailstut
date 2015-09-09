@@ -3,6 +3,8 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
+site url : https://glacial-mountain-5643.herokuapp.com/
+
 Things you may want to cover:
 
 * Ruby version
